@@ -65,3 +65,35 @@ function addTeamMember(){
         }
       })
 }
+// Add Engineer function when selected
+function addEngineer(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engName",
+            message: "What is the engineers name?"
+        },
+        {
+            type: "input",
+            name: "engId",
+            message: "What is the engineers Id number?"
+        },
+        {
+            type: "input",
+            name: "engEmail",
+            message: "What is the engineers email?"
+        },
+        {
+            type: "input",
+            name: "engGitHub",
+            message: "What is the engineers GitHub username?"
+        }
+
+    ])
+    .then(answers => {
+        const engineer = new Engineer(answers.engName , answers.engId, answers.engEmail, answers.engGitHub);
+        team.engineers.push(engineer);
+        addTeamMember();
+
+    });
+}
