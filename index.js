@@ -11,7 +11,7 @@ let team = {
     interns : []
 }
 // mng
-function inti(){
+function init(){
     inquirer.prompt([
         {
             type: "input",
@@ -132,3 +132,11 @@ function addIntern() {
     });
   
   }
+//   save HTML function if Im done is selected
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, error =>
+        error ? console.log(error): console.log('Success!'));
+
+}
+
+init();
