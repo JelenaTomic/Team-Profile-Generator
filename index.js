@@ -97,3 +97,38 @@ function addEngineer(){
 
     });
 }
+// Add Intern if selected
+function addIntern() {
+    inquirer.prompt([
+  
+      {
+        type: "input",
+        name: "inName",
+        message: "What is the intern's name?"
+      },
+  
+      {
+        type: "input",
+        name: "inId",
+        message: "What is the intern's employee ID number?"
+      },
+  
+      {
+        type: "input",
+        name: "inEmail",
+        message: "What is the intern's email address?"
+      },
+  
+      {
+        type: "input",
+        name: "inSchool",
+        message: "What school does the intern attend?"
+      }
+  
+    ]).then(answers => {
+      const intern = new Intern(answers.inName, answers.inId, answers.inEmail, answers.inSchool);
+      team.interns.push(intern);
+      addTeamMember();
+    });
+  
+  }
