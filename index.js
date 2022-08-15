@@ -11,8 +11,8 @@ let team = {
     interns : []
 }
 // mng
-function init(){
-    inquirer.Prompt([
+function inti(){
+    inquirer.prompt([
         {
             type: "input",
             name : "mnName",
@@ -36,8 +36,32 @@ function init(){
 
         }
     
-    ]).then(answer =>{
+    ])
+    .then(answer =>{
         team.manager = new Manager(answer.mnName, answer.mnId, answer.mnEmail, answer.mnOfficeNumber);
         addTeamMember();
     })
+}
+// making switch to add Engineer or add Intern or make HTML 
+function addTeamMember(){
+    inquirer.prompt([{
+        type : "list",
+        message : "Do you want to add new employee? " ,
+        name : "roleSelector",
+        choices : ["Engineer", "Intern" , "Im done"]
+    }])
+    .then(function (userInput) {
+        switch(userInput.roleSelector){
+            case "Engineer" :
+                addEngineer();
+            break;
+            case "Intern":
+                addIntern();
+            break;
+            case "Im done":
+                genPage(team);
+                console.log(team);
+                writeToFile('./dist/index.html', genPage(team));
+        }
+      })
 }
