@@ -70,3 +70,36 @@ generateIntern = intern => {
     `;
 };
 
+
+module.exports = team => {
+
+    return `
+       <!DOCTYPE html>
+       <html lang="en">
+           <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta http-equiv="X-UA-Compatible" content="ie=edge">
+              <title>Team Members</title>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+              <link rel="stylesheet" href="style.css">
+           </head>
+           <body>
+              <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-12 jumbotron mb-3 team-heading bg-danger">
+                          <h1 class="text-center text-white">My Team</h1>
+                      </div>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="">
+                      <div class="row team-area col-sm d-flex justify-content-center">
+                          ${generatePage(team)}
+                      </div>
+                  </div>
+               </div>
+           </body>
+       </html>
+    `;
+}; 
