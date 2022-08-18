@@ -1,7 +1,7 @@
 
 const Intern = require("../lib/intern");
 
-test('creates an Inter object', () => {
+describe('creates an Inter object', () => {
     const intern = new Intern('Ross', 3, 'ross@gmail.com', 'Central Cafe');
   
     expect(intern.name).toBe('Ross');

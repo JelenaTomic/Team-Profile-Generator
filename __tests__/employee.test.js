@@ -1,6 +1,6 @@
 const Employee = require("../lib/employee");
 
-test('creates a Employee object', () => {
+describe('creates a Employee object', () => {
   const employee = new Employee('Rachel', 1, 'rachel@gmail.com');
 
   expect(employee.name).toBe('Rachel');

@@ -18,7 +18,7 @@ generatePage = team => {
 generateManager = manager => {
     return `
         <div class="card employee-card">
-           <div class="card-header bg-primary text-white">
+           <div class="card-header bg-secondary text-white">
                <h2 class="card-title">${manager.getName()}</h2>
                <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
           </div>
@@ -36,7 +36,7 @@ generateManager = manager => {
 const generateEngineer = engineer => {
     return `
         <div class="card employee-card">
-          <div class="card-header bg-primary text-white">
+          <div class="card-header bg-secondary text-white">
               <h2 class="card-title">${engineer.getName()}</h2>
               <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
           </div>
@@ -55,7 +55,7 @@ const generateEngineer = engineer => {
 generateIntern = intern => {
     return `
         <div class="card employee-card">
-           <div class="card-header bg-primary text-white">
+           <div class="card-header bg-secondary text-white">
               <h2 class="card-title">${intern.getName()}</h2>
               <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
           </div>
@@ -81,13 +81,15 @@ module.exports = team => {
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <meta http-equiv="X-UA-Compatible" content="ie=edge">
               <title>Team Members</title>
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">                        
+               <script src="https://kit.fontawesome.com/6d4035b361.js" crossorigin="anonymous"></script>
+
               <link rel="stylesheet" href="style.css">
            </head>
            <body>
               <div class="container-fluid">
                   <div class="row">
-                     <div class="col-12 jumbotron mb-3 team-heading bg-danger">
+                     <div class="col-12 jumbotron mb-3 team-heading bg-info">
                           <h1 class="text-center text-white">My Team</h1>
                       </div>
                   </div>
